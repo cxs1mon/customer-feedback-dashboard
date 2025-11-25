@@ -1,0 +1,142 @@
+[
+  {
+    "id": "FB-2025-0001",
+    "createdAt": "2025-02-10T09:30:00Z",
+    "productCategory": "HAFTPFLICHT",
+    "rating": 5,
+    "comment": "Sehr freundliche Beratung, alles verständlich erklärt.",
+    "channel": "AGENTUR",
+    "sentiment": "POSITIVE",
+    "customerSegment": {
+      "id": "SEG_PRIVATE",
+      "name": "Privatkunden"
+    },
+    "tags": ["BERATUNG", "SERVICE_QUALITAET"]
+  },
+  {
+    "id": "FB-2025-0002",
+    "createdAt": "2025-02-11T14:05:00Z",
+    "productCategory": "HAUSHALT",
+    "rating": 3,
+    "comment": "Schaden wurde akzeptiert, aber der Prozess war etwas kompliziert.",
+    "channel": "ONLINE_UMFRAGE",
+    "sentiment": "NEUTRAL",
+    "customerSegment": {
+      "id": "SEG_PRIVATE",
+      "name": "Privatkunden"
+    },
+    "tags": ["SCHADENMELDUNG", "PROZESS"]
+  },
+  {
+    "id": "FB-2025-0003",
+    "createdAt": "2025-02-12T08:45:00Z",
+    "productCategory": "REISE",
+    "rating": 2,
+    "comment": "Lange Wartezeit in der Hotline und unklare Auskünfte.",
+    "channel": "CALLCENTER",
+    "sentiment": "NEGATIVE",
+    "customerSegment": {
+      "id": "SEG_PRIVATE",
+      "name": "Privatkunden"
+    },
+    "tags": ["WARTEZEIT", "HOTLINE", "UNZUFRIEDENHEIT"]
+  },
+  {
+    "id": "FB-2025-0004",
+    "createdAt": "2025-02-13T16:20:00Z",
+    "productCategory": "FAHRZEUG",
+    "rating": 4,
+    "comment": "Schnelle Schadenregulierung, nur die App ist etwas unübersichtlich.",
+    "channel": "MOBILE_APP",
+    "sentiment": "POSITIVE",
+    "customerSegment": {
+      "id": "SEG_PRIVATE",
+      "name": "Privatkunden"
+    },
+    "tags": ["SCHADENMELDUNG", "APP_USABILITY"]
+  },
+  {
+    "id": "FB-2025-0005",
+    "createdAt": "2025-02-15T11:10:00Z",
+    "productCategory": "LEBEN",
+    "rating": 5,
+    "comment": "Top-Beratung zur Lebensversicherung, sehr kompetent.",
+    "channel": "AGENTUR",
+    "sentiment": "POSITIVE",
+    "customerSegment": {
+      "id": "SEG_PRIVATE",
+      "name": "Privatkunden"
+    },
+    "tags": ["BERATUNG", "KOMPETENZ"]
+  },
+  {
+    "id": "FB-2025-0006",
+    "createdAt": "2025-02-16T13:40:00Z",
+    "productCategory": "KRANKEN",
+    "rating": 1,
+    "comment": "Ich fühle mich schlecht informiert über die Leistungen.",
+    "channel": "ONLINE_UMFRAGE",
+    "sentiment": "NEGATIVE",
+    "customerSegment": {
+      "id": "SEG_PRIVATE",
+      "name": "Privatkunden"
+    },
+    "tags": ["INFORMATION", "TRANSPARENZ", "UNZUFRIEDENHEIT"]
+  },
+  {
+    "id": "FB-2025-0007",
+    "createdAt": "2025-02-17T10:00:00Z",
+    "productCategory": "FAHRZEUG",
+    "rating": 4,
+    "comment": "Policenwechsel war unkompliziert, Support per Chat war hilfreich.",
+    "channel": "MOBILE_APP",
+    "sentiment": "POSITIVE",
+    "customerSegment": {
+      "id": "SEG_PRIVATE",
+      "name": "Privatkunden"
+    },
+    "tags": ["POLICENWECHSEL", "SUPPORT_CHAT"]
+  },
+  {
+    "id": "FB-2025-0008",
+    "createdAt": "2025-02-18T15:25:00Z",
+    "productCategory": "HAUSHALT",
+    "rating": 2,
+    "comment": "Viele Unterlagen per Post, ich hätte mir mehr Digitales gewünscht.",
+    "channel": "AGENTUR",
+    "sentiment": "NEGATIVE",
+    "customerSegment": {
+      "id": "SEG_PRIVATE",
+      "name": "Privatkunden"
+    },
+    "tags": ["DIGITALISIERUNG", "PAPIERFLUT"]
+  },
+  {
+    "id": "FB-2025-0009",
+    "createdAt": "2025-02-19T09:15:00Z",
+    "productCategory": "REISE",
+    "rating": 5,
+    "comment": "Reiseschaden wurde innerhalb von zwei Tagen reguliert. Super!",
+    "channel": "ONLINE_UMFRAGE",
+    "sentiment": "POSITIVE",
+    "customerSegment": {
+      "id": "SEG_PRIVATE",
+      "name": "Privatkunden"
+    },
+    "tags": ["SCHADENMELDUNG", "GESCHWINDIGKEIT"]
+  },
+  {
+    "id": "FB-2025-0010",
+    "createdAt": "2025-02-20T17:50:00Z",
+    "productCategory": "HAFTPFLICHT",
+    "rating": 3,
+    "comment": "Preis-Leistungs-Verhältnis ist ok, aber die Bedingungen sind schwer verständlich.",
+    "channel": "CALLCENTER",
+    "sentiment": "NEUTRAL",
+    "customerSegment": {
+      "id": "SEG_PRIVATE",
+      "name": "Privatkunden"
+    },
+    "tags": ["BEDINGUNGEN", "VERSTÄNDLICHKEIT"]
+  }
+]
