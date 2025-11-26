@@ -1,0 +1,44 @@
+<form [formGroup]="form" (ngSubmit)="onFilter()" class="feedback-filter">
+  <div class="feedback-filter__field feedback-filter__field--product">
+    <label for="product">Status</label>
+    <select formControlName="product" id="product">
+      <option value="ALL">Alle</option>
+      <option value="HAFTPFLICHT">Haftpflich</option>
+      <option value="HAUSHALT">Haushalt</option>
+      <option value="REISE">Reise</option>
+      <option value="FAHRZEUG">Fahrzeug</option>
+      <option value="LEBEN">Leben</option>
+      <option value="KRANKEN">Kranken</option>
+    </select>
+  </div>
+  <div class="feedback-filter__field feedback-filter__field--rating">
+    <label for="rating">Bewertung</label>
+    <select formControlName="rating" id="rating">
+      <option value="ALL">Alle</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+  </div>
+  <div class="feedback-filter__field feedback-filter__field--date-from">
+    <label for="dateFrom">Von Datum:</label>
+    <input type="date" id="dateFrom" formControlName="dateFrom">
+  </div>
+  <div class="feedback-filter__field feedback-filter__field--date-to">
+    <label for="dateTo">Bis Datum:</label>
+    <input type="date" id="dateTo" formControlName="dateTo">
+  </div>
+  <div class="feedback-filter__field feedback-filter__field--date-sort">
+    <label for="dateSort">Sortierung</label>
+    <select formControlName="dateSort" id="dateSort">
+      <option value="ASC" selected>Aufsteigend &#8593;</option>
+      <option value="DESC">Absteigend &#8595;</option>
+    </select>
+  </div>
+
+  <button type="submit" class="feedback-filter__field feedback-filter__field--submit" title="submitButton">
+    Search
+  </button>
+</form>
