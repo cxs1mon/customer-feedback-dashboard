@@ -1,27 +1,27 @@
-.feedback-overview--entry{
+.feedback-overview__entry{
   display: flex;
   background-color: #DDE4E3;
   margin: 10px;
   padding: 0 10px ;
   border-radius: 5px;
 }
-.feedback-overview--table{
+.feedback-overview__table{
   width: 100%;
   background-color: #5495CF;
   padding: 10px;
 }
-.feedback-overview--rating__stars .checked {
+.feedback-overview__rating--stars .checked {
   color: orange;
 }
-.feedback-overview--rating__stars .unchecked {
+.feedback-overview__rating--stars .unchecked {
   color: #b6b6b6;
 }
 
-.feedback-overview--rating{
+.feedback-overview__rating{
   display: flex;
   flex-direction: row;
   justify-content: start;
 }
-.feedback-overview--entry>p{
+.feedback-overview__entry>p{
   width:350px;
 }
