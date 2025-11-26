@@ -1,0 +1,17 @@
+<section class="feedback-overview">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <div class="feedback-overview--table">
+    <div *ngFor="let f of feedbacks" class="feedback-overview--entry">
+      <p class="feedback-overview--created">{{ f.createdAt | date:"dd. LLLL y" }}</p>
+      <p class="feedback-overview--category">{{ f.productCategory | titlecase }}</p>
+      <div class="feedback-overview--rating">
+        <p class="feedback-overview--rating__stars" *ngFor="let star of [].constructor(f.rating)">
+          <span class="fa fa-star checked"></span>
+        </p>
+        <p class="feedback-overview--rating__stars" *ngFor="let star of [].constructor(Math.floor(5-f.rating))">
+          <span class="fa fa-star unchecked"></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

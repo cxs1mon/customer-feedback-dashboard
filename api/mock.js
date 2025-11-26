@@ -5,7 +5,7 @@ import fs from 'fs';
 const app = express();
 const PORT = 3000;
 
-app.use(cors());
+app.use(cors({ origin: 'http://localhost:4200' }));
 
 const feedbacks = JSON.parse(fs.readFileSync('./assets/mock/feedbacks.json', 'utf8'));
 
