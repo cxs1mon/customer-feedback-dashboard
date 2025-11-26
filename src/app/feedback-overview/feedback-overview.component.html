@@ -1,13 +1,13 @@
 <section class="feedback-overview">
-  <div class="feedback-overview--table">
-    <div *ngFor="let f of feedbacks" class="feedback-overview--entry">
-      <p class="feedback-overview--created">{{ f.createdAt | date:"dd. LLLL y" }}</p>
-      <p class="feedback-overview--category">{{ f.productCategory | titlecase }}</p>
-      <div class="feedback-overview--rating">
-        <p class="feedback-overview--rating__stars" *ngFor="let star of [].constructor(f.rating)">
+  <div class="feedback-overview__table">
+    <div *ngFor="let f of feedbacks" class="feedback-overview__entry">
+      <p class="feedback-overview__created">{{ f.createdAt | date:"dd. LLLL y" }}</p>
+      <p class="feedback-overview__category">{{ f.productCategory | titlecase }}</p>
+      <div class="feedback-overview__rating">
+        <p class="feedback-overview__rating--stars" *ngFor="let star of [].constructor(f.rating)">
           <span class="fa fa-star checked"></span>
         </p>
-        <p class="feedback-overview--rating__stars" *ngFor="let star of [].constructor(Math.floor(5-f.rating))">
+        <p class="feedback-overview__rating--stars" *ngFor="let star of [].constructor(Math.floor(5-f.rating))">
           <span class="fa fa-star unchecked"></span>
         </p>
       </div>
