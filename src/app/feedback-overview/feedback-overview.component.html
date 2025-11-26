@@ -1,5 +1,9 @@
 <section class="feedback-overview">
   <div class="feedback-overview__table">
+    <p class="feedback-overview__kpi">
+      Angezeigte Feedbacks: {{ dispVsAll.disp }}/{{ dispVsAll.all }}
+    </p>
+
     <div *ngFor="let f of feedbacks" class="feedback-overview__entry">
       <p class="feedback-overview__created">{{ f.createdAt | date:"dd. LLLL y" }}</p>
       <p class="feedback-overview__category">{{ f.productCategory | titlecase }}</p>

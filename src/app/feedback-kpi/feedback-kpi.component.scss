@@ -1,0 +1,34 @@
+.feedback-kpi__card{
+  background-color: #5495CF;
+  margin: 10px;
+  padding: 10px 10px;
+  height: fit-content;
+}
+.feedback-kpi__value{
+  background-color: #DDE4E3;
+}
+.feedback-kpi__value--avg-rating{
+  height: 80px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.feedback-kpi__value{
+  margin: 0;
+  padding: 10px;
+}
+
+.feedback-kpi{
+  display: flex;
+  width: 100%;
+}
+.checked {
+  color: orange;
+  margin-left: 5px;
+}
+.unchecked {
+  color: grey ;
+  margin-left: 5px;
+}

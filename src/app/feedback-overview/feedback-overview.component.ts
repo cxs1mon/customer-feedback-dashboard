@@ -15,5 +15,5 @@ import {FeedbackDataModel} from '../../../model/feedbackData.model';
 })
 export class FeedbackOverviewComponent {
   @Input() feedbacks:FeedbackDataModel[] = [];
-  protected readonly Math = Math;
-}
+  @Input() dispVsAll: { disp: number; all: number } = { disp: 0, all: 0 };
+  protected readonly Math = Math;}
