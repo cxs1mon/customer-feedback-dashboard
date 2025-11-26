@@ -7,7 +7,7 @@ const PORT = 3000;
 
 app.use(cors({ origin: 'http://localhost:4200' }));
 
-const feedbacks = JSON.parse(fs.readFileSync('./assets/mock/feedbacks.json', 'utf8'));
+const feedbacks = JSON.parse(fs.readFileSync('./src/assets/mock/feedbacks.json', 'utf8'));
 
 app.get('/feedbacks', (req, res) => {
   res.json(feedbacks);

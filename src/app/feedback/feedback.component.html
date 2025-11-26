@@ -1,1 +1,2 @@
-<app-feedback-overview [feedbacks]="allFeedbacks"/>
+<app-feedback-filter (filter)="onFilterChange($event)"/>
+<app-feedback-overview [feedbacks]="filteredFeedbacks"/>

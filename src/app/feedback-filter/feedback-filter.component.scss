@@ -1,0 +1,36 @@
+.feedback-filter{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #5495CF;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+.feedback-filter__field{
+  display: flex;
+  flex-direction: column;
+  background-color: #dde4e3;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+.feedback-filter__field label{
+  margin-bottom: 2px;
+}
+
+.feedback-filter__field input, .feedback-filter__field select{
+  background-color: transparent;
+  border: 1px solid #181d4e;
+  font-size: 12px;
+  border-radius: 2px;
+}
+.feedback-filter__field--submit{
+  margin-top: auto;
+  height: 20px;
+  width: fit-content;
+  border: none;
+  font-weight: 700;
+  padding-top: 3px;
+}
