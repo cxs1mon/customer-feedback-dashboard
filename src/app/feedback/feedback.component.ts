@@ -18,8 +18,8 @@ import {FilterValuesModel} from '../../../model/filtervalues.model';
 export class FeedbackComponent implements OnInit {
 
   private service = inject(FeedbackService);
-  allFeedbacks:FeedbackDataModel[]= []
-  filteredFeedbacks:FeedbackDataModel[]= []
+  allFeedbacks: FeedbackDataModel[] = []
+  filteredFeedbacks: FeedbackDataModel[] = []
 
   ngOnInit() {
     this.loadFeedbacks();
@@ -40,7 +40,10 @@ export class FeedbackComponent implements OnInit {
 
   filterFeedbacks(filter: FilterValuesModel): FeedbackDataModel[] {
     let result = this.allFeedbacks.filter(f => {
-      const matchesRating = filter.rating === "ALL" || f.rating === +filter.rating;
+
+      const minRating = filter.rating === "ALL" ? 1 : +filter.rating;
+      const matchesRating = f.rating >= minRating;
+
       const matchesProduct = filter.product === "ALL" || f.productCategory === filter.product;
 
       const created = new Date(f.createdAt).getTime();
