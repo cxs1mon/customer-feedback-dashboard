@@ -1,6 +1,6 @@
 <form [formGroup]="form" (ngSubmit)="onFilter()" class="feedback-filter">
   <div class="feedback-filter__field feedback-filter__field--product">
-    <label for="product">Status</label>
+    <label for="product">Produkt</label>
     <select formControlName="product" id="product">
       <option value="ALL">Alle</option>
       <option value="HAFTPFLICHT">Haftpflich</option>
@@ -39,6 +39,6 @@
   </div>
 
   <button type="submit" class="feedback-filter__field feedback-filter__field--submit" title="submitButton">
-    Search
+    Suchen
   </button>
 </form>

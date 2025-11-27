@@ -1,13 +1,21 @@
-.feedback-kpi__card{
-  background-color: #5495CF;
+.feedback-kpi__card {
+  background-color: #dde4e3;
   margin: 10px;
   padding: 10px 10px;
+  border-radius: 5px;
+}
+
+.feedback-kpi__container {
+  background-color: #5495CF;
+  padding: 5px;
   height: fit-content;
 }
-.feedback-kpi__value{
+
+.feedback-kpi__value {
   background-color: #DDE4E3;
 }
-.feedback-kpi__value--avg-rating{
+
+.feedback-kpi__value--avg-rating {
   height: 80px;
   font-size: 24px;
   display: flex;
@@ -15,20 +23,30 @@
   align-items: center;
   border-radius: 5px;
 }
-.feedback-kpi__value{
+
+.feedback-kpi__value {
   margin: 0;
   padding: 10px;
 }
 
-.feedback-kpi{
+.feedback-kpi {
   display: flex;
   width: 100%;
+  justify-content: space-between;
+  margin: 10px;
 }
+
+.feedback-kpi__label {
+  font-weight: 700;
+  margin: 0 5px 10px 5px;
+}
+
 .checked {
   color: orange;
   margin-left: 5px;
 }
+
 .unchecked {
-  color: grey ;
+  color: grey;
   margin-left: 5px;
 }
