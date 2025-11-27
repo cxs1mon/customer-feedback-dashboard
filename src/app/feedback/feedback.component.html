@@ -1,3 +1,10 @@
-<app-feedback-filter (filter)="onFilterChange($event)"/>
-<app-feedback-overview [feedbacks]="filteredFeedbacks" [dispVsAll]="numDisplayedNumAll"/>
-<app-feedback-kpi [avgRating]="averageRating" [avgProduct]="averageProduct" [pctSentiment]="pctSentiment"/>
+<app-feedback-filter (filter)="onFilterChange($event)" />
+<app-feedback-overview
+  [feedbacks]="filteredFeedbacks"
+  [dispVsAll]="numDisplayedNumAll"
+/>
+<app-feedback-kpi
+  [avgRating]="averageRating"
+  [avgProduct]="averageProduct"
+  [pctSentiment]="pctSentiment"
+/>

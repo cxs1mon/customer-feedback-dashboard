@@ -23,7 +23,7 @@ export const initialFeedbackDataModel: FeedbackDataModel = {
   sentiment: '',
   customerSegment: {
     id: '',
-    name: ''
+    name: '',
   },
-  tags: []
+  tags: [],
 };

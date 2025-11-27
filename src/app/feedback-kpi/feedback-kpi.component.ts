@@ -1,13 +1,11 @@
-import {Component, Input} from '@angular/core';
-import {NgForOf} from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-feedback-kpi',
-  imports: [
-    NgForOf
-  ],
+  imports: [NgForOf],
   templateUrl: './feedback-kpi.component.html',
-  styleUrl: './feedback-kpi.component.scss'
+  styleUrl: './feedback-kpi.component.scss',
 })
 export class FeedbackKpiComponent {
   @Input() avgRating = {};
