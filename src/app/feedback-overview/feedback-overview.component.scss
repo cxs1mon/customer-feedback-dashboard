@@ -1,32 +1,53 @@
-.feedback-overview__entry{
+.feedback-overview__entry {
+  width: -webkit-fill-available;
   display: flex;
   background-color: #DDE4E3;
   margin: 10px;
-  padding: 0 10px ;
+  padding: 0 10px;
   border-radius: 5px;
+  justify-content: space-between;
+  border: 1px solid #DDE4E3;
 }
-.feedback-overview__table{
+
+.feedback-overview__entry:hover {
+  background-color: #cccccc;
+  border: 1px solid #9f9f9f;
+  cursor: pointer;
+}
+
+.feedback-overview__table {
   width: 100%;
   background-color: #5495CF;
   padding: 10px;
 }
+
 .feedback-overview__rating--stars .checked {
   color: orange;
 }
+
 .feedback-overview__rating--stars .unchecked {
   color: #b6b6b6;
 }
 
-.feedback-overview__rating{
+.feedback-overview__rating {
   display: flex;
   flex-direction: row;
   justify-content: start;
 }
-.feedback-overview__entry>p{
-  width:350px;
+
+.feedback-overview__entry > p {
+  width: 200px;
 }
 
-.feedback-overview__kpi{
+.feedback-overview__kpi {
   font-size: 14px;
   margin-left: 10px;
+}
+
+.feedback-overview__details {
+  width: auto;
+  height: 25px;
+  margin-top: 8px;
+  margin-left: 50px;
+  margin-right: 30px;
 }
