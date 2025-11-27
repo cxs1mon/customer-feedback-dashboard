@@ -1,44 +1,71 @@
 <section class="feedback-details">
-  <button class="feedback-details__back" (click)="goToOverview()" (keydown)="goToOverview()">
-    <img ngSrc="./Arrow_Right.png" alt="Back Arrow" width="268" height="510" class="feedback-details__back-img">
+  <button
+    class="feedback-details__back"
+    (click)="goToOverview()"
+    (keydown)="goToOverview()"
+  >
+    <img
+      ngSrc="./Arrow_Right.png"
+      alt="Back Arrow"
+      width="268"
+      height="510"
+      class="feedback-details__back-img"
+    />
     <p class="feedback-details__back-text">Zurück</p>
   </button>
   <div class="feedback-details__container">
     <div class="feedback-details__left">
       <p class="feedback-details__label">Datum:</p>
-      <p>{{ feedback.createdAt | date:'dd. LLLL y':'':'de' }}</p>
+      <p>{{ feedback.createdAt | date: "dd. LLLL y" : "" : "de" }}</p>
 
       <p class="feedback-details__label">Produkt:</p>
-      <p class="feedback-details__category">{{ feedback.productCategory | titlecase }}</p>
+      <p class="feedback-details__category">
+        {{ feedback.productCategory | titlecase }}
+      </p>
 
       <p class="feedback-details__label">Sentiment:</p>
-      <p class="feedback-details__sentiment"
-         [ngClass]="{
-           'feedback-details__sentiment--pos': feedback.sentiment === 'POSITIVE',
-           'feedback-details__sentiment--neg': feedback.sentiment === 'NEGATIVE',
-           'feedback-details__sentiment--neu':  feedback.sentiment === 'NEUTRAL'
-         }">
-        {{ feedback.sentiment | titlecase }}</p>
+      <p
+        class="feedback-details__sentiment"
+        [ngClass]="{
+          'feedback-details__sentiment--pos': feedback.sentiment === 'POSITIVE',
+          'feedback-details__sentiment--neg': feedback.sentiment === 'NEGATIVE',
+          'feedback-details__sentiment--neu': feedback.sentiment === 'NEUTRAL',
+        }"
+      >
+        {{ feedback.sentiment | titlecase }}
+      </p>
 
       <p class="feedback-details__label">Bewertung:</p>
       <div class="feedback-details__rating">
-        <p class="feedback-details__rating--stars" *ngFor="let star of [].constructor(feedback.rating)">
+        <p
+          class="feedback-details__rating--stars"
+          *ngFor="let star of [].constructor(feedback.rating)"
+        >
           <span class="fa fa-star checked"></span>
         </p>
-        <p class="feedback-details__rating--stars" *ngFor="let star of [].constructor(Math.floor(5-feedback.rating))">
+        <p
+          class="feedback-details__rating--stars"
+          *ngFor="let star of [].constructor(Math.floor(5 - feedback.rating))"
+        >
           <span class="fa fa-star unchecked"></span>
         </p>
       </div>
 
-      <p class="feedback-details__label">Kundensegment:</p>
-      <p class="feedback-details__customer">{{ feedback.customerSegment.name }}</p>
+      <p class="feedback-details__label">Kunde:</p>
+      <p class="feedback-details__customer">
+        {{ feedback.customerSegment.name }}
+      </p>
 
       <p class="feedback-details__label">Kanal:</p>
-      <p class="feedback-details__channel">{{ feedback.channel.replace('_', ' ') | titlecase }}</p>
+      <p class="feedback-details__channel">
+        {{ feedback.channel.replace("_", " ") | titlecase }}
+      </p>
 
       <p class="feedback-details__label">Tags:</p>
       <div>
-        <p class="feedback-details__tag" *ngFor="let t of feedback.tags">{{ t.replace('_', ' ') | titlecase }}</p>
+        <p class="feedback-details__tag" *ngFor="let t of feedback.tags">
+          {{ t.replace("_", " ") | titlecase }}
+        </p>
       </div>
     </div>
     <div class="feedback-details__right">

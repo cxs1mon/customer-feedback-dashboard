@@ -1,23 +1,30 @@
 <section class="feedback-kpi">
   <div class="feedback-kpi__container">
     <div class="feedback-kpi__card">
-      <p class="feedback-kpi__label">Durchschnittliche Bewertung</p>
-      <p class="feedback-kpi__value feedback-kpi__value--avg-rating ">{{ avgRating }}<small
-        class="fa fa-star checked"></small></p>
+      <p class="feedback-kpi__label">&#216; Bewertung</p>
+      <p class="feedback-kpi__value feedback-kpi__value--avg-rating">
+        {{ avgRating }}<small class="fa fa-star checked"></small>
+      </p>
     </div>
   </div>
   <div class="feedback-kpi__container">
     <div class="feedback-kpi__card">
-      <p class="feedback-kpi__label">Anteil Positiver/Negativer/Neutraler Bewertung</p>
-      <p class="feedback-kpi__value feedback-kpi__pct-sentiment" *ngFor="let item of Object.entries(pctSentiment)">
+      <p class="feedback-kpi__label">Stimmung der Rückmeldungen</p>
+      <p
+        class="feedback-kpi__value feedback-kpi__pct-sentiment"
+        *ngFor="let item of Object.entries(pctSentiment)"
+      >
         {{ item[0] }}: {{ item[1] }}%
       </p>
     </div>
   </div>
   <div class="feedback-kpi__container">
     <div class="feedback-kpi__card">
-      <p class="feedback-kpi__label">Durchschnittliche Bewertung pro Produkt</p>
-      <p class="feedback-kpi__value feedback-kpi__value--avg-product" *ngFor="let item of Object.entries(avgProduct)">
+      <p class="feedback-kpi__label">&#216; Bewertung pro Produkt</p>
+      <p
+        class="feedback-kpi__value feedback-kpi__value--avg-product"
+        *ngFor="let item of Object.entries(avgProduct)"
+      >
         {{ item[0] }}: {{ item[1] }}<small class="fa fa-star unchecked"></small>
       </p>
     </div>

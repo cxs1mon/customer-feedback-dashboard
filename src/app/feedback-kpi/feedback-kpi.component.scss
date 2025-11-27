@@ -6,22 +6,27 @@
 }
 
 .feedback-kpi__container {
-  background-color: #5495CF;
+  background-color: #5495cf;
   padding: 5px;
   height: fit-content;
+  @media (min-width: 769px) {
+    margin: 10px;
+  }
 }
 
 .feedback-kpi__value {
-  background-color: #DDE4E3;
+  background-color: #dde4e3;
 }
 
 .feedback-kpi__value--avg-rating {
-  height: 80px;
   font-size: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
+  @media (min-width: 769px) {
+    height: 80px;
+  }
 }
 
 .feedback-kpi__value {
@@ -30,17 +35,22 @@
 }
 
 .feedback-kpi {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  margin: 10px;
+  margin-top: 10px;
+  @media (min-width: 769px) {
+    justify-content: space-between;
+    display: flex;
+    margin: 10px;
+    flex-direction: row;
+  }
+  @media (min-width: 769px) {
+    width: 100%;
+  }
 }
 
 .feedback-kpi__label {
   font-weight: 700;
   margin: 0 5px 10px 5px;
 }
-
 .checked {
   color: orange;
   margin-left: 5px;
