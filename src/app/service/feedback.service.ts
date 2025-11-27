@@ -8,10 +8,14 @@ import {FeedbackDataModel} from '../../../model/feedbackData.model';
 })
 export class FeedbackService {
   private http = inject(HttpClient);
-  private feedbacksUrl = 'http://localhost:3000/feedbacks';
+  private feedbacksUrl = 'http://localhost:3000/feedbacks/';
 
   getFeedbacks(): Observable<FeedbackDataModel[]> {
     return this.http.get<FeedbackDataModel[]>(this.feedbacksUrl);
   }
+  getFeedbackById(id:string): Observable<FeedbackDataModel> {
+    return this.http.get<FeedbackDataModel>(`${this.feedbacksUrl}${id}`);
+  }
+
 
 }
