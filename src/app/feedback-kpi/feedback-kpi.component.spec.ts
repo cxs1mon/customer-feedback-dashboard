@@ -8,9 +8,8 @@ describe('FeedbackKpiComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FeedbackKpiComponent]
-    })
-    .compileComponents();
+      imports: [FeedbackKpiComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(FeedbackKpiComponent);
     component = fixture.componentInstance;
