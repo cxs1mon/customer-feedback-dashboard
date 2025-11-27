@@ -4,18 +4,39 @@
       Angezeigte Feedbacks: {{ dispVsAll.disp }}/{{ dispVsAll.all }}
     </p>
 
-    <button *ngFor="let f of feedbacks" class="feedback-overview__entry" (click)="goToDetailsView(f.id)" (keydown)="goToDetailsView(f.id)">
-      <p class="feedback-overview__created">{{ f.createdAt | date:"dd. LLLL y" }}</p>
-      <p class="feedback-overview__category">{{ f.productCategory | titlecase }}</p>
+    <button
+      *ngFor="let f of feedbacks"
+      class="feedback-overview__entry"
+      (click)="goToDetailsView(f.id)"
+      (keydown)="goToDetailsView(f.id)"
+    >
+      <p class="feedback-overview__created">
+        {{ f.createdAt | date: "dd. LLLL y" }}
+      </p>
+      <p class="feedback-overview__category">
+        {{ f.productCategory | titlecase }}
+      </p>
       <div class="feedback-overview__rating">
-        <p class="feedback-overview__rating--stars" *ngFor="let star of [].constructor(f.rating)">
+        <p
+          class="feedback-overview__rating--stars"
+          *ngFor="let star of [].constructor(f.rating)"
+        >
           <span class="fa fa-star checked"></span>
         </p>
-        <p class="feedback-overview__rating--stars" *ngFor="let star of [].constructor(Math.floor(5-f.rating))">
+        <p
+          class="feedback-overview__rating--stars"
+          *ngFor="let star of [].constructor(Math.floor(5 - f.rating))"
+        >
           <span class="fa fa-star unchecked"></span>
         </p>
       </div>
-      <img ngSrc="./Arrow_Right.png" width="268" height="510" alt="Right Arrow" class="feedback-overview__details">
+      <img
+        ngSrc="./Arrow_Right.png"
+        width="268"
+        height="510"
+        alt="Right Arrow"
+        class="feedback-overview__details"
+      />
     </button>
   </div>
 </section>

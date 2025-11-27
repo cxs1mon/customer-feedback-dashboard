@@ -1,30 +1,45 @@
 .feedback-filter {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  background-color: #5495CF;
-  padding: 10px;
-  margin-bottom: 10px;
+  flex-direction: column;
+  background-color: #5495cf;
+  padding: 0 20px 20px 20px;
   font-size: 12px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @media (min-width: 426px) {
+    flex-direction: row;
+  }
+  @media (min-width: 769px) {
+    padding: 10px;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
 .feedback-filter__field {
   display: flex;
   flex-direction: column;
   background-color: #dde4e3;
-  padding: 10px;
-  margin: 10px;
+  padding: 7px;
   border-radius: 5px;
-  width: 15%;
+  margin: 5px;
   border: 1px solid #dde4e3;
+  @media (min-width: 426px) {
+    width: 40%;
+  }
+  @media (min-width: 769px) {
+    margin: 10px;
+    width: 12%;
+  }
 }
 
 .feedback-filter__field label {
   margin-bottom: 2px;
 }
 
-.feedback-filter__field input, .feedback-filter__field select {
+.feedback-filter__field input,
+.feedback-filter__field select {
   background-color: transparent;
   border: 1px solid #181d4e;
   font-size: 12px;
@@ -33,16 +48,66 @@
 }
 
 .feedback-filter__field--submit {
-  margin-top: auto;
   height: 25px;
-  width: fit-content;
+  width: -webkit-fill-available;
   font-weight: 700;
   padding-top: 4px;
   cursor: pointer;
   border: 1px solid #dde4e3;
+  @media (min-width: 769px) {
+    width: fit-content;
+  }
 }
 
 .feedback-filter__field--submit:hover {
   background-color: #cccccc;
   border: 1px solid #9f9f9f;
+}
+
+.feedback-filter__closed {
+  @media (max-width: 769px) {
+    display: none;
+  }
+}
+
+.feedback-filter__toggle-text {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.feedback-filter__toggle-img {
+  rotate: 90deg;
+  width: auto;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.feedback-filter__toggle-img--open {
+  rotate: -90deg !important; // !important because it should overwrite the standard
+}
+
+.feedback-filter__toggle {
+  display: flex;
+  flex-direction: row;
+  background-color: #5495cf;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  height: 15px;
+  @media (min-width: 769px) {
+    display: none;
+  }
+}
+
+.feedback-filter__toggle-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #5495cf;
+  padding: 10px;
+  font-size: 12px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  @media (min-width: 769px) {
+    display: none;
+  }
 }

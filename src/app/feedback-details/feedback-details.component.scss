@@ -1,15 +1,21 @@
-.feedback-details__left, .feedback-details__right {
-  background-color: #DDE4E3;
+.feedback-details__left,
+.feedback-details__right {
+  background-color: #dde4e3;
   margin: 10px;
   padding: 0 10px;
   border-radius: 5px;
 }
 
 .feedback-details__left {
-  width: 40%;
   display: grid;
   grid-template-columns: 50% 1fr;
   gap: 6px 12px;
+  @media (min-width: 426px) {
+    width: -webkit-fill-available;
+  }
+  @media (min-width: 769px) {
+    width: 45%;
+  }
 }
 
 .feedback-details__label {
@@ -18,17 +24,30 @@
 }
 
 .feedback-details__right {
-  width: 55%;
-  height: -webkit-fill-available;
+  height: fit-content;
+  @media (min-width: 426px) {
+    width: -webkit-fill-available;
+  }
+  @media (min-width: 769px) {
+    width: 45%;
+    height: -webkit-fill-available;
+  }
 }
 
 .feedback-details__container {
-  background-color: #5495CF;
+  background-color: #5495cf;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
-  align-items: flex-start;
   padding: 10px;
+  @media (min-width: 426px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  @media (min-width: 769px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 }
 
 .feedback-details__rating--stars .checked {
@@ -65,22 +84,24 @@
 }
 
 .feedback-details__sentiment--neu {
-  background-color: #FFB619;
+  background-color: #ffb619;
   border: 1px solid #d5940a;
 }
 
 .feedback-details__back {
   display: flex;
-  background-color: #DDE4E3;
-  width: 8%;
+  background-color: #dde4e3;
+  width: 6rem;
   height: 20px;
   padding: 15px;
   margin-bottom: 10px;
   align-items: center;
   border-radius: 5px;
-  border: 1px solid #DDE4E3;
+  border: 1px solid #dde4e3;
   flex-direction: row;
   justify-content: space-between;
+  @media (min-width: 426px) {
+  }
 }
 
 .feedback-details__back:hover {
