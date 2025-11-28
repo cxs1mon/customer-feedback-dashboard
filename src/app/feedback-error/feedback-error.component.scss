@@ -1,0 +1,21 @@
+.feedback-error__text {
+  background-color: #dde4e3;
+  margin: 0;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.feedback-error {
+  background-color: #5495cf;
+  width: 65%;
+  margin: 30vh auto;
+  padding: 10px;
+  font-size: 14px;
+  font-style: italic;
+  @media (min-width: 426px) {
+    width: 60%;
+  }
+  @media (min-width: 769px) {
+    width: 40%;
+  }
+}
