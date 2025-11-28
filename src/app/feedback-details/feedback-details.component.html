@@ -5,7 +5,7 @@
     (keydown)="goToOverview()"
   >
     <img
-      ngSrc="./Arrow_Right.png"
+      ngSrc="./Arrow_Right_Blue.png"
       alt="Back Arrow"
       width="268"
       height="510"
@@ -13,7 +13,7 @@
     />
     <p class="feedback-details__back-text">Zurück</p>
   </button>
-  <div class="feedback-details__container">
+  <div class="feedback-details__container" *ngIf="validData; else invalidData">
     <div class="feedback-details__left">
       <p class="feedback-details__label">Datum:</p>
       <p>{{ feedback.createdAt | date: "dd. LLLL y" : "" : "de" }}</p>
@@ -73,4 +73,12 @@
       <p class="feedback-details__comment">{{ feedback.comment }}</p>
     </div>
   </div>
+  <ng-template #invalidData>
+    <section class="feedback-details__error">
+      <p class="feedback-details__error-text">
+        Keine Daten gefunden!<br />
+        Bitte versuche es später erneut
+      </p>
+    </section>
+  </ng-template>
 </section>

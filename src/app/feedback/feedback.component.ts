@@ -5,6 +5,7 @@ import { FeedbackDataModel } from '../../../model/feedbackData.model';
 import { FeedbackFilterComponent } from '../feedback-filter/feedback-filter.component';
 import { FilterValuesModel } from '../../../model/filtervalues.model';
 import { FeedbackKpiComponent } from '../feedback-kpi/feedback-kpi.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-feedback',
@@ -19,6 +20,7 @@ import { FeedbackKpiComponent } from '../feedback-kpi/feedback-kpi.component';
 })
 export class FeedbackComponent implements OnInit {
   private service: FeedbackService = inject(FeedbackService);
+  private router = inject(Router);
   allFeedbacks: FeedbackDataModel[] = [];
   filteredFeedbacks: FeedbackDataModel[] = [];
   numOfDisplayedFeedbacks = 0;
@@ -33,12 +35,23 @@ export class FeedbackComponent implements OnInit {
   }
 
   private loadFeedbacks() {
-    this.service.getFeedbacks().subscribe((feedbacks) => {
-      this.allFeedbacks = feedbacks;
-      this.filteredFeedbacks = feedbacks;
-      this.numOfAllFeedbacks = this.allFeedbacks.length;
-      this.numOfDisplayedFeedbacks = this.filteredFeedbacks.length;
-      this.calculateKpi();
+    this.service.getFeedbacks().subscribe({
+      next: (feedbacks) => {
+        if (!feedbacks || feedbacks.length <= 0) {
+          console.warn('No data found, redirecting to not found page');
+          this.router.navigate(['/not-found']);
+          return;
+        }
+        this.allFeedbacks = feedbacks;
+        this.filteredFeedbacks = feedbacks;
+        this.numOfAllFeedbacks = feedbacks.length;
+        this.numOfDisplayedFeedbacks = feedbacks.length;
+        this.calculateKpi();
+      },
+      error: () => {
+        console.warn('No Data found, redirecting to not found page!');
+        this.router.navigate(['/not-found']);
+      },
     });
   }
 

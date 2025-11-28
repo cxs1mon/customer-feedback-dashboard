@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { NgForOf } from '@angular/common';
+import { NgForOf, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-feedback-kpi',
-  imports: [NgForOf],
+  imports: [NgForOf, NgIf],
   templateUrl: './feedback-kpi.component.html',
   styleUrl: './feedback-kpi.component.scss',
 })

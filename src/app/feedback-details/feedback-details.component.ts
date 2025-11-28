@@ -9,13 +9,14 @@ import {
   DatePipe,
   NgClass,
   NgForOf,
+  NgIf,
   NgOptimizedImage,
   TitleCasePipe,
 } from '@angular/common';
 
 @Component({
   selector: 'app-feedback-details',
-  imports: [DatePipe, NgForOf, TitleCasePipe, NgClass, NgOptimizedImage],
+  imports: [DatePipe, NgForOf, TitleCasePipe, NgClass, NgOptimizedImage, NgIf],
   templateUrl: './feedback-details.component.html',
   styleUrl: './feedback-details.component.scss',
 })
@@ -26,6 +27,7 @@ export class FeedbackDetailsComponent implements OnInit {
   protected feedback: FeedbackDataModel = initialFeedbackDataModel;
 
   id: string | null = '';
+  validData = false;
 
   ngOnInit(): void {
     this.id = this.activeRoute.snapshot.paramMap.get('id');
@@ -33,9 +35,11 @@ export class FeedbackDetailsComponent implements OnInit {
       this.service.getFeedbackById(this.id).subscribe((feedback) => {
         this.feedback = feedback;
         console.log(this.feedback);
+        this.validData = true;
       });
     } else {
-      console.error('No valid ID found!');
+      console.warn('No valid ID found!');
+      this.validData = false;
     }
   }
 

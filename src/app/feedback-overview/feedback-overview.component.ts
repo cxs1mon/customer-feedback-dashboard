@@ -23,7 +23,8 @@ export class FeedbackOverviewComponent {
 
   goToDetailsView(id: string | undefined) {
     if (!id) {
-      console.error('Feedback-ID is not defined!', id);
+      console.warn('Feedback-ID is not defined!');
+      this.router.navigate(['not-found']);
       return;
     }
     this.router.navigate(['details', id]);
