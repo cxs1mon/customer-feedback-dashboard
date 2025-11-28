@@ -11,7 +11,7 @@
       (keydown)="goToDetailsView(f.id)"
     >
       <p class="feedback-overview__created">
-        {{ f.createdAt | date: "dd. LLLL y" }}
+        {{ f.createdAt | date: "dd. LLLL y" : "" : "de"}}
       </p>
       <p class="feedback-overview__category">
         {{ f.productCategory | titlecase }}
