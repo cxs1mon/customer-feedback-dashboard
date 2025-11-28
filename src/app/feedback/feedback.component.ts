@@ -6,6 +6,8 @@ import { FeedbackFilterComponent } from '../feedback-filter/feedback-filter.comp
 import { FilterValuesModel } from '../../../model/filtervalues.model';
 import { FeedbackKpiComponent } from '../feedback-kpi/feedback-kpi.component';
 import { Router } from '@angular/router';
+import {NgIf} from '@angular/common';
+import {FeedbackLoading} from '../feedback-loading/feedback-loading';
 
 @Component({
   selector: 'app-feedback',
@@ -14,6 +16,8 @@ import { Router } from '@angular/router';
     FeedbackOverviewComponent,
     FeedbackFilterComponent,
     FeedbackKpiComponent,
+    NgIf,
+    FeedbackLoading,
   ],
   templateUrl: './feedback.component.html',
   styleUrl: './feedback.component.scss',
@@ -29,17 +33,20 @@ export class FeedbackComponent implements OnInit {
   averageProduct: Record<string, number> = {};
   pctSentiment: Record<string, number> = {};
   numDisplayedNumAll: { disp: number; all: number } = { disp: 0, all: 0 };
+  isLoading:boolean = true;
 
   ngOnInit() {
     this.loadFeedbacks();
   }
 
   private loadFeedbacks() {
+    this.isLoading = true;
     this.service.getFeedbacks().subscribe({
       next: (feedbacks) => {
         if (!feedbacks || feedbacks.length <= 0) {
           console.warn('No data found, redirecting to not found page');
           this.router.navigate(['/not-found']);
+          this.isLoading = false;
           return;
         }
         this.allFeedbacks = feedbacks;
@@ -47,8 +54,10 @@ export class FeedbackComponent implements OnInit {
         this.numOfAllFeedbacks = feedbacks.length;
         this.numOfDisplayedFeedbacks = feedbacks.length;
         this.calculateKpi();
+        this.isLoading = false;
       },
       error: () => {
+        this.isLoading = false;
         console.warn('No Data found, redirecting to not found page!');
         this.router.navigate(['/not-found']);
       },
