@@ -1,56 +1,75 @@
 .feedback-kpi__card {
   background-color: #dde4e3;
   margin: 10px;
-  padding: 10px 10px;
+  padding: 20px 20px;
   border-radius: 5px;
+}
+
+.feedback-kpi__card--pie {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.feedback-kpi__container--per-product {
+  @media (max-width: 600px){
+    display: none;
+  }
+}
+
+.feedback-kpi__card--rating {
+  @media (min-width: 600px) {
+    height: 280px;
+    width: 250px;
+  }
 }
 
 .feedback-kpi__container {
   background-color: #5495cf;
   padding: 5px;
   height: fit-content;
-  @media (min-width: 769px) {
+  @media (min-width: 600px) {
     margin: 10px;
   }
 }
 
 .feedback-kpi__value {
   background-color: #dde4e3;
+  margin-top: 15px;
 }
 
-.feedback-kpi__value--avg-rating {
-  font-size: 24px;
+.feedback-kpi__value--rating {
+  font-size: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  @media (min-width: 769px) {
+  @media (min-width: 600px) {
     height: 80px;
+    margin: 80px 0;
   }
-}
-
-.feedback-kpi__value {
-  margin: 0;
-  padding: 10px;
 }
 
 .feedback-kpi {
   margin-top: 10px;
-  @media (min-width: 769px) {
-    justify-content: space-between;
+  @media (min-width: 600px) {
+    justify-content: center;
     display: flex;
     margin: 10px;
     flex-direction: row;
+    flex-wrap: wrap;
   }
-  @media (min-width: 769px) {
+  @media (min-width: 600px) {
     width: 100%;
   }
 }
 
 .feedback-kpi__label {
   font-weight: 700;
-  margin: 0 5px 10px 5px;
+  margin: 0 5px;
 }
+
 .checked {
   color: orange;
   margin-left: 5px;
@@ -59,4 +78,27 @@
 .unchecked {
   color: grey;
   margin-left: 5px;
+}
+
+.feedback-kpi__value--per-product {
+  width: 400px !important;
+  height: 200px !important;
+  max-width: 100%;
+}
+
+.feedback-kpi__value--sentiment {
+  width: 300px !important;
+  height: 280px !important;
+  max-width: 100%;
+  margin: 15px auto;
+}
+
+.feedback-kpi__container--product{
+  @media (min-width: 600px){
+    display: none;
+  }
+}
+.feedback-kpi__label-hint{
+  font-size: 10px;
+  margin: 0 5px;
 }

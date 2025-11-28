@@ -1,50 +1,42 @@
 <section class="feedback-kpi">
   <div class="feedback-kpi__container">
-    <div class="feedback-kpi__card">
-      <p class="feedback-kpi__label">&#216; Bewertung</p>
-      <p class="feedback-kpi__value feedback-kpi__value--avg-rating">
-        {{ avgRating || "Keine Daten gefunden"
+    <div class="feedback-kpi__card feedback-kpi__card--rating">
+      <p class="feedback-kpi__label">&#216; Bewertung de Feedbacks</p>
+      <small class="feedback-kpi__label-hint">Bezieht sich auf die gefilterten Feedbacks</small>
+      <p class="feedback-kpi__value feedback-kpi__value--rating">
+        {{
+          avgRating || "Keine Daten gefunden"
         }}<small class="fa fa-star checked" *ngIf="avgRating"></small>
       </p>
     </div>
   </div>
   <div class="feedback-kpi__container">
-    <div class="feedback-kpi__card">
-      <p class="feedback-kpi__label">Stimmung der Rückmeldungen</p>
-      <ng-container
-        *ngIf="Object.keys(pctSentiment).length > 0; else noSentiment"
-      >
-        <p
-          class="feedback-kpi__value feedback-kpi__pct-sentiment"
-          *ngFor="let item of Object.entries(pctSentiment)"
-        >
-          {{ item[0] }}: {{ item[1] }}%
-        </p>
-      </ng-container>
-      <ng-template #noSentiment>
-        <p class="feedback-kpi__value feedback-kpi__pct-sentiment">
-          Keine Daten gefunden
-        </p>
-      </ng-template>
+    <div class="feedback-kpi__card feedback-kpi__card--sentiment">
+      <p class="feedback-kpi__label">Sentiment Verteilung in %</p>
+      <small class="feedback-kpi__label-hint">Bezieht sich auf die gefilterten Feedbacks</small>
+      <canvas baseChart type="pie" [data]="pieChartData" class="feedback-kpi__value feedback-kpi__value--sentiment"></canvas>
     </div>
   </div>
-  <div class="feedback-kpi__container">
-    <div class="feedback-kpi__card">
+  <div class="feedback-kpi__container feedback-kpi__container--product">
+    <div class="feedback-kpi__card feedback-kpi__card--product">
       <p class="feedback-kpi__label">&#216; Bewertung pro Produkt</p>
-      <ng-container *ngIf="Object.keys(avgProduct).length > 0; else noProduct">
-        <p
-          class="feedback-kpi__value feedback-kpi__value--avg-product"
-          *ngFor="let item of Object.entries(avgProduct)"
-        >
-          {{ item[0] }}: {{ item[1]
-          }}<small class="fa fa-star unchecked"></small>
-        </p>
-      </ng-container>
-      <ng-template #noProduct>
-        <p class="feedback-kpi__value feedback-kpi__value--avg-product">
-          Keine Daten gefunden
-        </p>
-      </ng-template>
+      <small class="feedback-kpi__label-hint">Bezieht sich auf alle Feedbacks</small>
+      <p
+        class="feedback-kpi__value feedback-kpi__value--product"
+        *ngFor="let label of avgProductLabels; let i = index"
+      >
+        {{ label }}: {{ avgProductValues[i] }}
+        <small class="fa fa-star unchecked"></small>
+      </p>
+    </div>
+  </div>
+
+  <div class="feedback-kpi__container feedback-kpi__container--per-product">
+    <div class="feedback-kpi__card feedback-kpi__card--per-product">
+      <p class="feedback-kpi__label">&#216; Bewertung pro Produkt</p>
+      <small class="feedback-kpi__label-hint">Bezieht sich auf alle Feedbacks</small>
+      <canvas baseChart type="bar" [data]="barChartData" [options]="barChartOptions"
+              class="feedback-kpi__value feedback-kpi__value--per-product"></canvas>
     </div>
   </div>
 </section>

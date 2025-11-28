@@ -107,6 +107,7 @@ export class FeedbackComponent implements OnInit {
     } else {
       this.averageRating = 0;
     }
+
     console.log('Average rating (filtered): ', this.averageRating);
 
     // calculate average rating per category
@@ -164,7 +165,7 @@ export class FeedbackComponent implements OnInit {
       sumKranken += f.rating;
     });
     this.averageProduct['Kranken'] = sumKranken / k.length;
-
+    this.averageProduct = JSON.parse(JSON.stringify(this.averageProduct));
     console.log(this.averageProduct);
 
     // calculate sentiments in percents
@@ -188,6 +189,8 @@ export class FeedbackComponent implements OnInit {
     this.pctSentiment['Neutral'] = Math.floor((neuCounter / allCounter) * 100);
 
     console.log(this.pctSentiment);
+    this.pctSentiment = JSON.parse(JSON.stringify(this.pctSentiment));
+
 
     // display number of displayed vs number of all feedbacks
     this.numDisplayedNumAll.disp = this.numOfDisplayedFeedbacks;
